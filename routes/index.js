@@ -1,3 +1,5 @@
+var os = require('os');
+
 var images = [
     'http://chal-bucket.s3-website-ap-northeast-1.amazonaws.com/g.png',
     'http://chal-bucket.s3-website-ap-northeast-1.amazonaws.com/c.png',
@@ -11,7 +13,7 @@ module.exports = function (req, res) {
         {
             title: 'Rock-Paper-Scissors',
             image: images[Math.floor(Math.random() * images.length)],
-            footer: 'run at ' + req.hostname
+            footer: 'run at ' + os.hostname()
         });
 };
 
